@@ -463,6 +463,12 @@ button.toggle:focus-visible {
 }
 
 @media (max-width: 720px) {
+  body {
+    align-items: start;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+
   :root {
     --pager-size: 1.75rem;
     --pager-font: 0.92rem;
@@ -477,6 +483,12 @@ button.toggle:focus-visible {
   .stage.reading {
     width: min(97vw, 500px);
     aspect-ratio: 9 / 16;
+  }
+
+  .stage,
+  .stage.reading {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .instruction {
@@ -495,6 +507,12 @@ button.toggle:focus-visible {
 
   .page-content {
     padding: 0.58rem;
+  }
+
+  .page[data-page="2"] .page-content,
+  .stage.reading .page-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
